@@ -1,0 +1,22 @@
+body {
+  background-color: powderblue;
+  text-align: center;
+}
+h1 {
+  background-color: red;
+}
+h2 {
+  background-color:yellow;
+}
+h3 {
+  background-color: lightgreen;
+}
+div {
+  background-color: azure;
+}
+footer {
+  background-color: red;
+}
+.cCenterText {
+  text-align: center;
+}
