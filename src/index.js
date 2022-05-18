@@ -22,7 +22,7 @@ function fDisplayCountDown() {
   const xmasDate = new Date("12/25/2022");
   const tDate = new Date();
   // const timeDiff = tDate.getTime() - xmasDate.getTime();
-  const timeDiff = tDate - xmasDate;
+  const timeDiff = xmasDate - tDate;
   const diffDate = new Date(timeDiff);
 
   // One day in milliseconds
@@ -51,7 +51,7 @@ function fDisplayCountDown() {
   const msg00 = `${daysDiff}<br>`;
   const msg0 = `${y4}/${m2}/${d2}<br>`;
   const msg = `${d}day(s) ${h}hour(s) ${m}minute(s) ${s}seconds`;
-  const msg2 = `<br>Total TimeDiff (milliseconds) ${timeDiff}<br> ${xmasDate}<br>${tDate}`;
+  const msg2 = `<br><br>Total TimeDiff (milliseconds) ${timeDiff}<br> ${xmasDate}<br>${tDate}`;
   if (myDebugging) {
     mainDiv.innerHTML = m001 + msg00 + msg0 + msg + msg2;
 
