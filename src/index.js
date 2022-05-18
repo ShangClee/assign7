@@ -27,33 +27,19 @@ function fDisplayCountDown() {
 
   // One day in milliseconds
   const daysDiff = getNumberOfDays(tDate, xmasDate);
-  const TimeDiffMinusDays = tDate.getTime() - daysDiff * ONEDAY;
-  const lessOneDayTime = new Date(TimeDiffMinusDays);
-
-  let d = 100,
-    h = 10,
-    m = 30,
-    s = 25;
-  d = getNumberOfDays(tDate, xmasDate);
-  h = diffDate.getHours();
-  m = diffDate.getMinutes();
-  s = diffDate.getSeconds();
-  const y4 = diffDate.getFullYear();
-  const m2 = diffDate.getMonth();
-  const d2 = diffDate.getDay();
-  // here to calc
-  const m001 = `
-      ${lessOneDayTime}<br>
-      ${lessOneDayTime.getHours()}: <br>
-      ${lessOneDayTime.getMinutes()}: <br>
-      ${lessOneDayTime.getSeconds()}: <br>
-  `;
-  const msg00 = `${daysDiff}<br>`;
-  const msg0 = `${y4}/${m2}/${d2}<br>`;
-  const msg = `${d}day(s) ${h}hour(s) ${m}minute(s) ${s}seconds`;
+  const dDays = timeDiff / ONEDAY;
+  const hHours = (dDays - Math.floor(dDays)) * 24;
+  const mMins = (hHours - Math.floor(hHours)) * 60;
+  const sSecs = (mMins - Math.floor(mMins)) * 60;
+  const msg = `
+      ${Math.floor(dDays)}d,
+      ${Math.floor(hHours)}h:
+      ${Math.floor(mMins)}m:
+      ${Math.floor(sSecs)}s
+      `
   const msg2 = `<br><br>Total TimeDiff (milliseconds) ${timeDiff}<br> ${xmasDate}<br>${tDate}`;
   if (myDebugging) {
-    mainDiv.innerHTML = m001 + msg00 + msg0 + msg + msg2;
+    mainDiv.innerHTML = msg + msg2;
 
     //out2footer.innerHTML = `Date() = ${Date()}`;
     //console.log(Date());
